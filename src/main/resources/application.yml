@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pocdb
+    username: postgres
+    password: Akshay@123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true           # Shows SQL queries in console
+    hibernate:
+      ddl-auto: update       # Auto-update DB schema (good for demo)
+    properties:
+      hibernate:
+        format_sql: true     # Makes SQL readable
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  show-actuator: false
+  use-fqn: false
+
+logging:
+  level:
+    root: INFO               # Keep root at INFO for demo clarity
+    org.springframework: INFO
+    org.springdoc: DEBUG      # Swagger debug messages are okay
+    com.example.poc: DEBUG    # Our app logs
